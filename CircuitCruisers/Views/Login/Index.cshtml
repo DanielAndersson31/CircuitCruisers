@@ -1,0 +1,78 @@
+﻿@model UserLoginViewModel
+
+@{
+    ViewData["Title"] = "Login to your Account";
+}
+
+<section class="login-form" style="margin-top: 10rem;">
+    <div class="container-sm" style="max-width: 30rem">
+        <div class="title h2 my-5 text-center">@ViewData["Title"]</div>
+
+        <form method="post" asp-route-ReturnUrl="@Model.ReturnUrl" novalidate class="needs-validation">
+
+            <div asp-validation-summary="ModelOnly" class=" form-group error ";></div>
+
+            <!-- Email input -->
+            
+            <div class="mb-4">
+                <div class="form-outline">
+                    <input asp-for="Email" class="form-control" />
+                    <label asp-for="Email" class="form-label">Email address</label>
+                </div>
+                <span asp-validation-for="Email" class="error text-danger"></span>
+            </div>
+            
+            <!-- Password input -->
+             
+            <div class="mb-4">
+                <div class="form-outline">
+                    <input asp-for="Password" class="form-control" />
+                    <label asp-for="Password" class="form-label">Password</label>
+                </div>          
+                <span asp-validation-for="Password" class="error text-danger"></span>
+                
+            </div>
+           
+
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                    <!-- Checkbox -->
+                    <div class="form-check">
+                        <input asp-for="RememberMe" class="form-check-input"  />
+                        <label asp-for="RememberMe"  class="form-check-label" > Remember me </label>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <!-- Simple link -->
+                    <a href="#!">Forgot password?</a>
+                </div>
+            </div>
+
+            <!-- Submit button -->
+            <button class="btn btn-primary btn-block mb-4" style="background-color: #6200EA; color:white;">Sign in</button>
+
+            <!-- Register buttons -->
+            <div class="text-center">
+                <p>Not a member? <a asp-action="Index" asp-controller="Register">Register</a></p>
+                <p>or sign up with:</p>
+                <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                </button>
+
+                <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-google"></i>
+                </button>
+
+                <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-twitter"></i>
+                </button>
+
+                <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-github"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+</section>

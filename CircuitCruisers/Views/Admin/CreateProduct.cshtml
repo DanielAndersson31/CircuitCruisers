@@ -1,0 +1,72 @@
+﻿@model CreateProductViewModel
+@{
+    ViewData["Title"] = "Create Product";
+}
+
+
+
+<div class="container d-flex flex-column align-items-center mb-5 mt-5">
+    <h1>@ViewData["Title"]</h1>
+
+    <nav class="nav nav-pills flex-column flex-sm-row mb-5">
+        <a asp-action="index" asp-controller="admin" class="flex-sm-fill text-sm-center nav-link">Dashboard</a>
+        <a asp-action="products" asp-controller="admin" class="flex-sm-fill text-sm-center nav-link">Inventory</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="#">Support Center</a>
+        <a class="flex-sm-fill text-sm-center nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Admin</a>
+    </nav>
+
+   <div class="container-sm" style="max-width:30rem;">
+
+        <form method="post" novalidate>
+
+            <div asp-validation-summary="ModelOnly" class="form-group"></div>
+
+            <div class="row">
+                <div class=" col-md-12 mb-4">
+                    <div class="form-outline">
+                        <input asp-for="ArticleNumber" class="form-control" />
+                        <label asp-for="ArticleNumber" class="form-label"></label>
+                    </div>
+                    <span asp-validation-for="ArticleNumber" class="error text-danger"></span>
+                </div>
+                <div class="col-md-12 mb-4">
+                    <div class="form-outline">
+                        <input asp-for="ProductName" class="form-control" />
+                        <label asp-for="ProductName" class="form-label"></label>
+                    </div>
+                    <span asp-validation-for="ProductName" class="error text-danger"></span>
+                </div>
+                <div class=" col-md-12 mb-4">
+                    <div class="form-outline">
+                        <textarea asp-for="Ingress" class="form-control"></textarea>
+                        <label asp-for="Ingress" class="form-label"></label>
+                    </div>
+                    <span asp-validation-for="Ingress" class="error text-danger"></span>
+                </div>
+                <div class=" col-md-12 mb-4">
+                    <div class="form-outline">
+                        <textarea asp-for="Description" class="form-control"></textarea>
+                        <label asp-for="Description" class="form-label"></label>
+                    </div>
+                    <span asp-validation-for="Description" class="error text-danger"></span>
+                </div>
+                <div class=" col-md-6 mb-4">
+                    <div class="form-outline">
+                        <input asp-for="VendorName" class="form-control" />
+                        <label asp-for="VendorName" class="form-label"></label>
+                    </div>
+                    <span asp-validation-for="VendorName" class="error text-danger"></span>
+                </div>
+                <div class=" col-md-6 mb-4">
+                    <div class="form-outline">
+                        <input asp-for="BarCode" class="form-control" disabled/>
+                        <label asp-for="BarCode" class="form-label"></label>
+                    </div>
+                    <span asp-validation-for="BarCode" class="error text-danger"></span>
+                </div>
+                <button class="btn btn-block mb-4" style="background-color: #6200EA; color:white;">Add Product</button>
+            </div>
+        </form>
+   </div>
+
+</div>

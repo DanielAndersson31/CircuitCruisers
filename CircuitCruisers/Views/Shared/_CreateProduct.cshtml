@@ -1,0 +1,58 @@
+﻿@model CreateProductViewModel
+
+<div class="container-sm" style="max-width: 30rem">
+    <div class="title h2 my-5 text-center">@ViewData["Title"]</div>
+
+    <form method="post" enctype="multipart/form-data" novalidate>
+        <div asp-validation-summary="ModelOnly" class="form-group"></div>
+
+        <div class="row">
+            <div class="col-md-12 mb-4">
+                <div class="form-outline">
+                    <input asp-for="ArticleNumber" class="form-control" />
+                    <label asp-for="ArticleNumber" class="form-label">Article Number</label>
+                </div>
+                <span asp-validation-for="ArticleNumber" class="error text-danger"></span>
+            </div>
+            <div class=" col-md-6 mb-4">
+                <div class="form-outline">
+                    <input asp-for="ProductName" class="form-control" />
+                    <label asp-for="ProductName" class="form-label">Product Name</label>
+                </div>
+                <span asp-validation-for="ProductName" class="error text-danger"></span>
+            </div>
+            <div class=" col-md-6 mb-4">
+                <div class="form-outline">
+                    <input asp-for="Ingress" class="form-control" />
+                    <label asp-for="Ingress" class="form-label">Ingress</label>
+                </div>
+                <span asp-validation-for="Ingress" class="error text-danger"></span>
+            </div>
+            <div class=" col-md-12 mb-4">
+                <div class="form-outline">
+                    <textarea asp-for="Description" class="form-control"></textarea>
+                    <label asp-for="Description" class="form-label">Description</label>
+                </div>
+                <span asp-validation-for="Description" class="error text-danger"></span>
+            </div>
+            <div class=" col-md-6 mb-4">
+                <div class="form-outline">
+                    <input asp-for="VendorName" class="form-control" />
+                    <label asp-for="VendorName" class="form-label">Vendor Name</label>
+                </div>
+                <span asp-validation-for="VendorName" class="error text-danger"></span>
+            </div>
+            <div class=" col-md-6 mb-4">
+                <div class="form-outline">
+                    <input asp-for="BarCode" class="form-control" disabled />
+                    <label asp-for="BarCode" class="form-label">Barcode</label>
+                </div>
+                <span asp-validation-for="BarCode" class="error text-danger"></span>
+            </div>
+        </div>
+
+
+        <button class="btn btn-block mb-4" style="background-color: #6200EA; color:white;">Add Product</button>
+    </form>
+
+</div>
