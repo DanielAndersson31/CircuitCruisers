@@ -10,6 +10,8 @@ namespace CircuitCruisers.Controllers
         [Authorize]
         public IActionResult Index()
         {
+            var viewModel = new 
+
             return View();
         }
     }

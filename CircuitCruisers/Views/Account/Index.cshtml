@@ -1,8 +1,12 @@
-﻿@{
+﻿@model UserRegisterViewModel
+
+@{
     ViewData["Title"] = User.FindFirst("DisplayName")?.Value;
 }
 
 
 <div class="container">
     @ViewData["Title"]
+
+    @Model.FirstName
 </div>
