@@ -1,6 +1,6 @@
 # Circuit Cruisers
 
-This is a Asp.Net MVC Application created for a course submission, EC-Utbildning Asp.Net 2023.
+This is a Asp.Net MVC Application is created for a course submission, EC-Utbildning Asp.Net 2023.
 
 ## App
 
