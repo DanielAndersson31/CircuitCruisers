@@ -21,5 +21,7 @@ namespace CircuitCruisers.Models.ViewModels
         [Display(Name = "Vendor Name")]
         [Required(ErrorMessage = "Please provide a vendor name")]
         public string? VendorName { get; set; }
+        [Display(Name = "Image Url")]
+        public string ? ImageURL { get; set; }
     }
 }

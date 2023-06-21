@@ -1,6 +1,8 @@
 ﻿using CircuitCruisers.Contexts;
+using CircuitCruisers.Helpers.Repositories;
 using CircuitCruisers.Helpers.Services;
 using CircuitCruisers.Models.Dtos;
+using CircuitCruisers.Models.Entities;
 using CircuitCruisers.Models.Identity;
 using CircuitCruisers.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -17,11 +19,13 @@ namespace CircuitCruisers.Controllers
 
         private readonly UserManager<AppUser> _userManager;
         private readonly ProductService _productService;
+        private readonly ContactFormRepository _contactRepository;
 
-        public AdminController(UserManager<AppUser> userManager, ProductService productService)
+        public AdminController(UserManager<AppUser> userManager, ProductService productService, ContactFormRepository contactRepository)
         {
             _userManager = userManager;
             _productService = productService;
+            _contactRepository = contactRepository;
         }
 
 
@@ -69,6 +73,22 @@ namespace CircuitCruisers.Controllers
 
             return View(viewModel);
         }
+
+        public async Task<IActionResult> ContactCenter()
+        {
+            var tickets = new SupportTicketsViewModel
+            {
+                Tickets = await _contactRepository.GetAllAsync()
+            };
+            if(tickets != null)
+            {
+                return View(tickets);
+            }
+
+            return View();
+            
+        }
+
       
     }
 }

@@ -36,6 +36,7 @@ namespace CircuitCruisers.Helpers.Services
                         Tags = tagList,
                         VendorName = item.VendorName,
                         BarCode = item.BarCode,
+                        ImageURL = item.ImageURL,
 
                     });            
             }
@@ -65,6 +66,7 @@ namespace CircuitCruisers.Helpers.Services
                         Tags = tagList,
                         VendorName = item.VendorName,
                         BarCode = item.BarCode,
+                        ImageURL = item.ImageURL,
                         
 
                     });
@@ -87,6 +89,7 @@ namespace CircuitCruisers.Helpers.Services
                 VendorName = product.VendorName,
                 Description = product.Description,
                 BarCode = product.BarCode,
+                ImageURL = product.ImageURL
                              
             };
 
@@ -113,7 +116,7 @@ namespace CircuitCruisers.Helpers.Services
                     Tags = tagList,
                     VendorName = item.VendorName,
                     BarCode = item.BarCode,
-
+                    ImageURL = item.ImageURL    
                 };
 
             return product;

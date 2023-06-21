@@ -12,7 +12,6 @@ namespace CircuitCruisers.Controllers
     {
 
         private readonly UserManager<AppUser> _userManager;
-
         public AccountController(UserManager<AppUser> userManager)
         {
             _userManager = userManager;
@@ -21,6 +20,7 @@ namespace CircuitCruisers.Controllers
         [Authorize]
         public async Task<IActionResult> Index()
         {
+            
             if (HttpContext.User.Identity != null!)
             {
                 var appUser = await _userManager.Users.FirstOrDefaultAsync(x => x.Email == HttpContext.User.Identity.Name);

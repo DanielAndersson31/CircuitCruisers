@@ -12,6 +12,7 @@ namespace CircuitCruisers.Models.Entities
         public string? Ingress { get; set; }
         public string? Description { get; set; }
         public string? VendorName { get; set; }
+        public string? ImageURL { get; set; }
 
 
    
