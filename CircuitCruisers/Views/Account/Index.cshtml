@@ -1,12 +1,16 @@
-﻿@model UserRegisterViewModel
+﻿@model AppUser
 
 @{
-    ViewData["Title"] = User.FindFirst("DisplayName")?.Value;
+    ViewData["Title"] = User.FindFirst("DisplayName");
 }
 
 
-<div class="container">
-    @ViewData["Title"]
+<div class="container mt-5">
 
-    @Model.FirstName
+   
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <h2>@Model.FirstName @Model.LastName</h2>
+        <p>@Model.PhoneNumber</p>
+        <p>@Model.CompanyName</p>
+    </div>
 </div>
